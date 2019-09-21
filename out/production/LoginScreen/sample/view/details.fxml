@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -7,9 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #546e7a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.controller.DetailsController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #546e7a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DetailsController">
    <children>
       <Label fx:id="detailsWelcomeLabel" alignment="CENTER" layoutX="449.0" layoutY="14.0" prefHeight="32.0" prefWidth="240.0" text="Welcome..." textFill="WHITE">
          <font>
@@ -36,13 +35,14 @@
             <DropShadow />
          </effect>
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="24.0" prefHeight="21.0" prefWidth="240.0" text="How to find me" textFill="#463f3f">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="-5.0" prefHeight="40.0" prefWidth="368.0" style="-fx-background-color: #748e9a;" text="How to find me" textFill="#463f3f">
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Label>
-            <Label fx:id="detailsWeb" layoutX="95.0" layoutY="62.0" prefHeight="21.0" prefWidth="167.0" text="Internet Link" textFill="#837b7b" />
-            <Label fx:id="detailsTwitter" layoutX="95.0" layoutY="101.0" prefHeight="21.0" prefWidth="167.0" text="Twitter Link" textFill="#837b7b" />
             <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="50.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-website-96.png" />
@@ -53,6 +53,8 @@
                   <Image url="@../assets/icons8-twitter-128.png" />
                </image>
             </ImageView>
+            <Hyperlink fx:id="detailsWeb" layoutX="95.0" layoutY="59.0" prefHeight="29.0" prefWidth="222.0" text="www.bbc.co.uk" />
+            <Hyperlink fx:id="detailsTwitter" layoutX="101.0" layoutY="97.0" prefHeight="29.0" prefWidth="222.0" text="ww.twitter.co.uk" />
          </children>
       </AnchorPane>
    </children>

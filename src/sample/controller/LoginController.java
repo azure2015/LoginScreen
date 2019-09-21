@@ -47,17 +47,43 @@ public class LoginController {
         if (!loginUsername.getText().toString().trim().equals("") &&
                  !loginPassword.getText().toString().trim().equals("")) {
 
-            //Login in Sucessful
-            Stage detailStage = new Stage();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/view/details.fxml"));
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("/sample/view/details.fxml"));
-                Scene scene = new Scene(root);
-                detailStage.setScene(scene);
-                detailStage.show();
-                detailStage.setResizable(false);
+                loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+
+            DetailsController detailsController = loader.getController();
+            detailsController.setName(loginUsername.getText(),32,"Java developer");
+
+            stage.show();
+
+            //Error code
+//            //Login in Sucessful
+//            Stage detailStage = new Stage();
+//            try {
+//
+//                FXMLLoader loader = new FXMLLoader();
+//
+//                Parent root = FXMLLoader.load(getClass().getResource("/sample/view/details.fxml"));
+//                Scene scene = new Scene(root);
+//                detailStage.setScene(scene);
+//
+//                DetailsController detailsController = loader.getController();
+//                detailsController.initialize();
+//                detailsController.setName(loginUsername.getText().trim());
+//                detailStage.show();
+//                detailStage.setResizable(false);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
 
         }
